@@ -1,0 +1,10 @@
+<h1> Add Book </h1>
+
+<div>
+    Title <input type="text" [(ngModel)]="book.title"/> <br>
+    Author <input type="text"[(ngModel)]="book.author"/><br>
+    Genre <input type="text" [(ngModel)]="book.genre"/><br>
+    Height <input type="text" [(ngModel)]="book.height"/><br>
+    Publisher <input type="text" [(ngModel)]="book.publisher"/><br>
+    <button (click)="createBook()">Submit</button>
+</div>

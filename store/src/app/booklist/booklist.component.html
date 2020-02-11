@@ -1,0 +1,49 @@
+
+<h1> Book List </h1>
+
+<div>
+  Filter <input type="text" [(ngModel)]="filterValue"/>
+  <div *ngFor="let filter of filters ">
+    <input type="radio" name="filter" value="{{filter}}" (change)="radioChangeHandler($event)"/><i>{{filter}}</i>
+  </div>
+</div>
+<br>
+
+
+SortBy
+<div>
+  <div *ngFor="let sort of sortby ">
+    <input type="radio" name="filter" value="{{sort}}" (change)="radioChangeHandler1($event)"/><i>{{sort}}</i>
+  </div>
+</div>
+
+
+<div *ngFor ="let book of books">   
+  <!-- if condition -->
+  <!-- <div *ngIf ="(selectedFilter == 'author' && book.author == filterValue)
+    ||(selectedFilter == 'genre' && book.genre == filterValue)
+    ||(selectedFilter == 'publisher' && book.publisher == filterValue);
+    else none">
+      <a [routerLink]="['/details',book.id]"><h2>{{book.title}}</h2></a>
+  </div> -->
+
+  <div *ngIf = " fun(selectedFilter,book) else none">
+    <a [routerLink]="['/details',book.id]"><h2>{{book.title}}</h2></a>
+  </div>
+ 
+  <!-- else condition -->
+  <ng-template #none>    
+
+    <!-- if condition -->
+    <ng-container *ngIf = "selectedFilter ==='none' ; else noone">
+      <a [routerLink]="['/details',book.id]"><h2>{{book.title}}</h2></a>
+    </ng-container>
+    <!-- else condition -->
+    <ng-template #noone></ng-template>
+
+  </ng-template>  
+
+</div>
+
+
+<button routerLink="/add">Add</button>

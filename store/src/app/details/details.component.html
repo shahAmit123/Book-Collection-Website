@@ -1,0 +1,22 @@
+<h1> Book Details</h1>
+    <!-- shows details of selected book-->
+    <h2>Title     :  {{book.title}}</h2>
+    <h2>Author    :  {{book.author}}</h2>
+    <h2>Genre     :  {{book.genre}}</h2>
+    <h2>Height    :  {{book.height}}</h2>
+    <h2>Publisher :  {{book.publisher}}</h2>
+
+    <!-- Can be updated or deleted by this-->
+    <div>
+      Title <input type="text" [(ngModel)]="book.title"/> <br>
+      Author <input type="text"[(ngModel)]="book.author"/><br>
+      Genre <input type="text" [(ngModel)]="book.genre"/><br>
+      Height <input type="text" [(ngModel)]="book.height"/><br>
+      Publisher <input type="text" [(ngModel)]="book.publisher"/><br>
+      <button (click)="updateBook()">Update</button>
+      <button (click)="deleteBook()">Delete</button>
+  </div>
+   
+
+    
+ 
